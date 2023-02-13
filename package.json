@@ -2,7 +2,10 @@
   "name": "react-app",
   "version": "1.0.0",
   "description": "React app project",
-  "scripts": {},
+  "scripts": {
+    "serve": "webpack serve --env mode=dev",
+    "build": "webpack --env mode=dev"
+  },
   "keywords": [],
   "author": "Mateus Sarmento",
   "license": "MIT",
