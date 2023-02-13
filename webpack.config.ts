@@ -1,22 +1,7 @@
-import { Configuration } from "webpack";
-import "webpack-dev-server";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import commonConfig from "./webpack/webpack.common";
+import merge from "webpack-merge";
 
-export default {
-  entry: "./src/index.js",
-  output: {
-    path: __dirname + "/dist",
-    filename: "index.js"
-  },
-  devServer: {
-    hot: true,
-    open: true,
-    port: "auto",
-    historyApiFallback: true
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html"
-    }),
-  ],
-} as Configuration;
+export default (env: any) => {
+  const config = require(`./webpack/webpack.${env.mode}.ts`).default;
+  return merge(commonConfig, config);
+};
