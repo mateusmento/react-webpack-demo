@@ -1,0 +1,10 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "React app project",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "Mateus Sarmento",
+  "license": "MIT"
+}
