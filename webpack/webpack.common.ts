@@ -3,15 +3,18 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import * as path from "path";
 
 export default {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "..", "dist"),
     filename: "index.js"
   },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"]
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: "babel-loader"
       }
