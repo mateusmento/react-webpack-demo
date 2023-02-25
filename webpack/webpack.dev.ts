@@ -7,6 +7,11 @@ export default {
     hot: true,
     open: true,
     port: "auto",
-    historyApiFallback: true
+    historyApiFallback: true,
+    static: {
+      directory: "./src/assets",
+      publicPath: "/assets",
+      watch: true,
+    },
   },
 } as Configuration;
